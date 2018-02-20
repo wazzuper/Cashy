@@ -1,0 +1,5 @@
+test:
+  post:
+    - bundle exec rspec
+    - bundle exec rubocop
+    - bundle exec reek .
