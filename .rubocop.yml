@@ -1,0 +1,10 @@
+require: rubocop-rspec
+
+Style/Encoding:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 120
+
+Style/StringLiterals:
+  Enabled: false
