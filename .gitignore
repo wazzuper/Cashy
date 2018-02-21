@@ -7,9 +7,6 @@
 # Ignore all .env files
 /.env*
 
-# Secrets
-/config/secrets.yml
-
 # Ignore bundler config.
 /.bundle
 
