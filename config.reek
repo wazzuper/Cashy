@@ -4,5 +4,5 @@ TooManyStatements:
 IrresponsibleModule:
   enabled: false
 
-  NestedIterators:
-    enabled: false
+NestedIterators:
+  enabled: false
