@@ -1,0 +1,8 @@
+IrresponsibleModule:
+  enabled: false
+
+TooManyStatements:
+  max_statements: 5
+
+NestedIterators:
+  enabled: false

@@ -1,5 +1,18 @@
+machine:
+  timezone:
+    Asia/Yekaterinburg
+
+  ruby:
+    version:
+      2.4.3
+
+dependencies:
+  pre:
+    - gem install bundler --pre
+
 test:
   post:
-    - bundle exec rspec
     - bundle exec rubocop
-    - bundle exec reek .
+    - bundle exec reek app -c reek.yml
+    - bundle exec reek config -c reek.yml
+    - bundle exec rspec
