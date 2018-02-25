@@ -11,6 +11,9 @@ dependencies:
     - gem install bundler --pre
 
 test:
+  pre:
+    - yarn install
+    - NODE_ENV=test bundle exec rails webpacker:compile
   post:
     - bundle exec rubocop
     - bundle exec reek app -c reek.yml
