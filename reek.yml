@@ -5,4 +5,4 @@ IrresponsibleModule:
   enabled: false
 
 NestedIterators:
-  enabled: false
+  max_allowed_nesting: 2
