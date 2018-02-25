@@ -1,5 +1,14 @@
+machine:
+  timezone:
+    Asia/Yekaterinburg
+
+  ruby:
+    version:
+      2.4.3
+
 test:
   post:
-    - bundle exec rspec
     - bundle exec rubocop
-    - bundle exec reek .
+    - reek app -c reek.yml
+    - reek config -c reek.yml
+    - bundle exec rspec
