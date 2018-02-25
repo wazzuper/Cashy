@@ -5,4 +5,4 @@ TooManyStatements:
   max_statements: 5
 
 NestedIterators:
-  max_allowed_nesting: 2
+  enabled: false
