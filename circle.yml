@@ -6,9 +6,12 @@ machine:
     version:
       2.4.3
 
+dependencies:
+  pre:
+    - gem install bundler --pre
+
 test:
   post:
     - bundle exec rubocop
-    - reek app -c config.reek
-    - reek config -c config.reek
+    - bundle exec reek .
     - bundle exec rspec
