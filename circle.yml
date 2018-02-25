@@ -6,6 +6,9 @@ machine:
     version:
       2.4.3
 
+  node:
+    version: 8.9.4
+
 dependencies:
   pre:
     - gem install bundler --pre
