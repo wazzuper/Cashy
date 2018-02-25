@@ -9,5 +9,5 @@ machine:
 test:
   post:
     - bundle exec rubocop
-    - bundle exec rake .
+    - bundle exec reek .
     - bundle exec rspec
