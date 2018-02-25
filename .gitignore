@@ -8,8 +8,8 @@
 /.env*
 
 # Ignore all /public/packs and /public/packs-test files
-/public/packs/*
-/public/packs-test/*
+/public/packs
+/public/packs-test
 
 # Ignore bundler config.
 /.bundle
