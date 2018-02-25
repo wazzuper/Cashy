@@ -9,6 +9,5 @@ machine:
 test:
   post:
     - bundle exec rubocop
-    - reek app -c reek.yml
-    - reek config -c reek.yml
+    - bundle exec rake .
     - bundle exec rspec
