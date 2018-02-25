@@ -60,8 +60,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'rubocop', '~> 0.52.1', require: false
 gem 'rubocop-rspec'
 gem 'reek'
-<<<<<<< HEAD
 
 gem 'webpacker', '~> 3.2'
-=======
->>>>>>> 39f810b710d0c04c6f1b2af933f073d23b3fb1bc
