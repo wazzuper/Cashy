@@ -64,3 +64,6 @@ gem 'rubocop-rspec'
 gem 'reek'
 
 gem 'webpacker', '~> 3.2'
+
+gem 'devise'
+gem 'omniauth'
