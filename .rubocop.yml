@@ -91,6 +91,9 @@ Layout/SpaceAroundOperators:
   Exclude:
     - 'config/env.custom.rb'
 
+Layout/SpaceAfterComma:
+  Enabled: true
+
 Layout/Tab:
   Enabled: true
 
