@@ -17,4 +17,5 @@
       = f.submit t('.sign_up', default: 'Sign up'), class: 'btn btn-primary'
       hr
       = link_to 'Sign up with GitHub', user_github_omniauth_authorize_path, class: 'btn btn-dark'
+      = link_to 'Sign up with Google', user_google_oauth2_omniauth_authorize_path, class: 'btn btn-light'
 = render 'devise/shared/links'
