@@ -68,3 +68,4 @@ gem 'webpacker', '~> 3.2'
 
 gem 'devise'
 gem 'omniauth'
+gem 'omniauth-github'

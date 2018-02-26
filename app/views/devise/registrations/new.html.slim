@@ -15,4 +15,6 @@
         = f.label :password_confirmation
         = f.password_field :password_confirmation, class: 'form-control'
       = f.submit t('.sign_up', default: 'Sign up'), class: 'btn btn-primary'
+      hr
+      = link_to 'Sign up with GitHub', user_github_omniauth_authorize_path, class: 'btn btn-dark'
 = render 'devise/shared/links'
