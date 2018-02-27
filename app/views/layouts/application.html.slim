@@ -11,10 +11,13 @@ html
 
   body
     = render 'shared/navbar'
-
+    
     div.container
+      -if flash[:notice]
+        div.alert.alert-success
+          = notice
+      -if flash[:alert]
+        div.alert.alert-danger
+          = alert
+
       == yield
-      p.notice
-        = notice
-      p.alert
-        = alert

@@ -30,4 +30,12 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  session:
+    log_in: 'Log in'
+    log_out: 'Log out'
+    edit_profile: 'Edit profile'
+    registration: 'Registration'
+
+  navbar:
+    title: 'Cashy'
+
