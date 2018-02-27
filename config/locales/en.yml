@@ -30,4 +30,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  views:
+    layouts:
+      log_in: 'Log in'
+      log_out: 'Log out'
