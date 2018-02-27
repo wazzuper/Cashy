@@ -10,15 +10,13 @@ AllCops:
     - 'tmp/**/*'
     - 'public/**/*'
     - 'log/**/*'
+    - 'config/initializers/devise.rb'
 
 Bundler/DuplicatedGem:
   Enabled: true
 
 Layout/AccessModifierIndentation:
   EnforcedStyle: indent
-
-Layout/AlignParameters:
-  EnforcedStyle: with_fixed_indentation
 
 Layout/BlockEndNewline:
   Enabled: true
@@ -92,17 +90,6 @@ Layout/SpaceAroundOperators:
   Enabled: true
   Exclude:
     - 'config/env.custom.rb'
-
-Layout/SpaceBeforeBlockBraces:
-  EnforcedStyle: space
- 
-Layout/SpaceInsideBlockBraces:
-  EnforcedStyle: space
-  EnforcedStyleForEmptyBraces: space
-
-Layout/SpaceInsideHashLiteralBraces:
-  EnforcedStyle: no_space
-  EnforcedStyleForEmptyBraces: no_space
 
 Layout/Tab:
   Enabled: true

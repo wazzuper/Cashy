@@ -30,6 +30,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'slim'
+gem 'devise-bootstrap-views'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -64,3 +65,6 @@ gem 'rubocop-rspec'
 gem 'reek'
 
 gem 'webpacker', '~> 3.2'
+
+gem 'devise'
+gem 'omniauth'
