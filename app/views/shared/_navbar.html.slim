@@ -1,0 +1,22 @@
+nav.navbar.navbar-expand-lg.navbar-light
+  div.container
+    = link_to t('navbar.title'), root_path, class: 'navbar-brand'
+    button.navbar-toggler type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+      span.navbar-toggler-icon
+
+    div#navbarSupportedContent.collapse.navbar-collapse
+      ul.nav.navbar-nav.ml-auto
+        - if user_signed_in?
+          li.nav-item.dropdown
+            a#navbarDropdown.nav-link.dropdown-toggle href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+              = "Welcome, #{current_user.email}"
+
+            div.dropdown-menu aria-labelledby="navbarDropdown"
+              = link_to t('session.edit_profile'), edit_user_registration_path, class: 'dropdown-item'
+              = link_to t('session.log_out'), destroy_user_session_path, method: :delete, class: 'dropdown-item'
+
+        - else
+          li.nav-item
+            = link_to t('session.log_in'), new_user_session_path, class: 'nav-link'
+          li.nav-tem
+            = link_to t('session.registration'), new_user_registration_path, class: 'nav-link'

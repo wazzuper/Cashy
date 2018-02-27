@@ -10,14 +10,14 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
   body
-    - if user_signed_in?
-      = link_to t('views.layouts.log_out'), destroy_user_session_path, method: :delete
-    - else
-      = link_to t('views.layouts.log_in'), new_user_session_path
-
-    == yield
+    = render 'shared/navbar'
     
-    p.notice
-      = notice
-    p.alert
-      = alert
+    div.container
+      -if flash[:notice]
+        div.alert.alert-success
+          = notice
+      -if flash[:alert]
+        div.alert.alert-danger
+          = alert
+
+      == yield
