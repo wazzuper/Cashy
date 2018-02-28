@@ -1,8 +1,17 @@
+DuplicateMethodCall:
+  max_calls: 2
+
 IrresponsibleModule:
   enabled: false
 
+InstanceVariableAssumption:
+  enabled: false
+
 TooManyStatements:
-  max_statements: 5
+  max_statements: 8
 
 NestedIterators:
+  enabled: false
+
+UncommunicativeMethodName:
   enabled: false
