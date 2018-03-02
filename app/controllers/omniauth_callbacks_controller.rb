@@ -24,6 +24,6 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   private
 
   def user
-    @user ||= User.from_omniauth(request.env['omniauth.auth'])
+    @user ||= OmniAuthService.new(request.env['omniauth.auth']).user
   end
 end
