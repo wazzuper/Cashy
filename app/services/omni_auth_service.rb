@@ -5,22 +5,28 @@ class OmniAuthService
     @auth_params = auth_params
   end
 
-  def user
-    User.where(provider: provider, uid: uid).first_or_create! do |user|
-      user.assign_attributes(email: email, password: password)
-      user.skip_confirmation!
-    end
+  def get_user
+    user
   end
 
   private
-  
+
   delegate :provider, :uid, to: :auth_params
 
-  def email
-    auth_params.info.email
+  def user
+    user = User.where(provider: provider, uid: uid).first
+    user ||= User.new(
+      provider: provider,
+      uid: uid,
+      email: auth_params.info.email,
+      password: Devise.friendly_token[0, 20]
+    )
+    create_user(user)
   end
 
-  def password
-    Devise.friendly_token[0, 20]
+  def create_user(user)
+    user.skip_confirmation!
+    user.save
+    user
   end
 end
