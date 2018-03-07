@@ -1,4 +1,6 @@
 class OmniAuthService
+  attr_reader :auth_params
+
   def initialize(auth_params)
     @auth_params = auth_params
   end
@@ -11,8 +13,7 @@ class OmniAuthService
   end
 
   private
-
-  attr_reader :auth_params
+  
   delegate :provider, :uid, to: :auth_params
 
   def email
