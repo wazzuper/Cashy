@@ -6,27 +6,23 @@ class OmniAuthService
   end
 
   def user
-    existing_provider = Identity.find_by(provider: provider, uid: uid)
-    if existing_provider.eql?(nil)
-      create_or_return_user(provider, uid)
-    else
-      existing_provider.user
-    end
+    Identity.find_by!(provider: provider, uid: uid).user
+  rescue ActiveRecord::RecordNotFound
+    find_or_create_user
   end
 
   private
 
   delegate :provider, :uid, to: :auth_params
 
-  def create_or_return_user(provider, uid)
+  def find_or_create_user
     user = User.where(email: email).first_or_create! do |user|
       user.assign_attributes(password: password)
       user.skip_confirmation!
     end
     user.identities.create!(
       provider: provider,
-      uid: uid,
-      user_id: user.id
+      uid: uid
     )
     user
   end
