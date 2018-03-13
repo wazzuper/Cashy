@@ -48,6 +48,7 @@ en:
       github_sign_in: 'Sign in with GitHub'
       google_sign_up: 'Sign up with Google'
       google_sign_in: 'Sign in with Google'
+      remove_avatar: 'Remove this avatar?'
     sessions:
       signed_in: "Signed in successfully."
       signed_out: "Signed out successfully."

@@ -9,7 +9,8 @@ nav.navbar.navbar-expand-lg.navbar-light
         - if user_signed_in?
           li.nav-item.dropdown
             a#navbarDropdown.nav-link.dropdown-toggle href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-              = "Welcome, #{current_user.email}"
+              = image_tag user_avatar(current_user), class: 'rounded-circle avatar-small'
+              = t('navbar.greeting', name: current_user.full_name)
 
             div.dropdown-menu aria-labelledby="navbarDropdown"
               = link_to t('session.edit_profile'), edit_user_registration_path, class: 'dropdown-item'
