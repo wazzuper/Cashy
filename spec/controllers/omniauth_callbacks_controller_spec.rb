@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe OmniauthCallbacksController, type: :controller do
   describe '#github' do
     context 'when github email doesn\'t exist' do
-      before(:each) do
+      before do
         github_omniauth
         get :github
         @user = User.find_by(email: 'user@email.com')
@@ -18,27 +18,25 @@ RSpec.describe OmniauthCallbacksController, type: :controller do
         expect(authentication).to_not be_nil
       end
 
-      it 'redirect to home page' do
+      it 'redirects to home page' do
         expect(response).to redirect_to root_path
       end
     end
 
     context 'when github email already exist' do
-      before(:each) do
+      before do
         github_omniauth
         get :github
       end
 
-      it 'expects omniauth.auth to be be_truthy' do
-        expect(request.env['omniauth.auth']).to be_truthy
-      end
+      it { expect(request.env['omniauth.auth']).to be_truthy }
 
       it 'finds user whith this email' do
         user = Identity.find_by(provider: 'github', uid: '12345').user
         expect(user).to_not be_nil
       end
 
-      it 'redirect to home page' do
+      it 'redirects to home page' do
         expect(response).to redirect_to root_path
       end
     end
@@ -46,15 +44,13 @@ RSpec.describe OmniauthCallbacksController, type: :controller do
 
   describe '#google_oauth2' do
     context 'when google email doesn\'t exist' do
-      before(:each) do
+      before do
         google_omniauth
         get :google_oauth2
         @user = User.find_by(email: 'user@email.com')
       end
 
-      it 'expects omniauth.auth to be be_truthy' do
-        expect(request.env['omniauth.auth']).to be_truthy
-      end
+      it { expect(request.env['omniauth.auth']).to be_truthy }
 
       it 'creates authentication with google' do
         authentication = @user.identities.find_by(provider: 'google', uid: '12345')
@@ -67,14 +63,12 @@ RSpec.describe OmniauthCallbacksController, type: :controller do
     end
 
     context 'when google email already exist' do
-      before(:each) do
+      before do
         google_omniauth
         get :google_oauth2
       end
 
-      it 'expects omniauth.auth to be be_truthy' do
-        expect(request.env['omniauth.auth']).to be_truthy
-      end
+      it { expect(request.env['omniauth.auth']).to be_truthy }
 
       it 'finds user whith this email' do
         user = Identity.find_by(provider: 'google', uid: '12345').user
