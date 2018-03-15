@@ -1,5 +1,16 @@
 - if user_signed_in?
-  h2 Hello
-  = render 'shared/add_money_form'
+  .row
+    .col-md-6
+      h4 = t('main_page_user.form_title')
+      = render 'shared/add_money_form'
+    .col-md-6
+      h4 = t('main_page_user.transactions_title')
+      table.table
+        tbody
+        - @transactions.each do |transaction|
+          tr
+            td = transaction.amount
+            td = transaction.date
+        
 - else
-  h2 Hello World!
+  h2 = t('main_page_guest.title')

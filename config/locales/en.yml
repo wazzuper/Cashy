@@ -40,6 +40,10 @@ en:
     title: 'Cashy'
     greeting: 'Welcome %{name}'
 
-  transaction_form:
-    add: 'Add money'
+  main_page_guest:
+    title: 'Welcome to Cashy app!'
 
+  main_page_user:
+    form_add: 'Add money'
+    form_title: 'Form for adding some money'
+    transactions_title: 'Last 10 transactions'
