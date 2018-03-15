@@ -9,14 +9,10 @@ class TransactionsController < ApplicationController
     @transaction = current_user.transactions.new(transactions_params)
 
     if @transaction.save
-      redirect_to @transaction
+      redirect_to request.referrer
     else
       render 'pages/welcome'
     end
-  end
-
-  def show
-    @transaction = Transaction.find(params[:id])
   end
 
   private
