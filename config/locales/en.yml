@@ -46,6 +46,9 @@ en:
   main_page_user:
     form_add: 'Add money'
     form_title: 'Form for adding some money'
+    form_amount: 'Amount'
+    form_date: 'Date'
+    form_comment: 'Comment'
     transactions_title: 'Last 10 transactions'
 
   transaction:
