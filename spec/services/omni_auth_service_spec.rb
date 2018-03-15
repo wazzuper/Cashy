@@ -17,7 +17,6 @@ RSpec.describe OmniAuthService do
       it 'returns existing user with two providers' do
         user = OmniAuthService.new(google_auth).user
         user = OmniAuthService.new(github_auth).user
-        expect(user.email).to eql('user@email.com')
         expect(user.identities.first.provider).to eql('google')
         expect(user.identities.last.provider).to eql('github')
         expect(user.identities.count).to eq(2)
@@ -50,7 +49,6 @@ RSpec.describe OmniAuthService do
       it 'returns existing user with two providers' do
         user = OmniAuthService.new(github_auth).user
         user = OmniAuthService.new(google_auth).user
-        expect(user.email).to eql('user@email.com')
         expect(user.identities.first.provider).to eql('github')
         expect(user.identities.last.provider).to eql('google')
         expect(user.identities.count).to eq(2)
