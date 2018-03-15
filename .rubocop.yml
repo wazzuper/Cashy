@@ -11,6 +11,8 @@ AllCops:
     - 'public/**/*'
     - 'log/**/*'
     - 'config/initializers/devise.rb'
+    - 'config/initializers/simple_form.rb'
+    - 'config/initializers/simple_form_bootstrap.rb'
 
 Bundler/DuplicatedGem:
   Enabled: true
