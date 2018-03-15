@@ -1,3 +1,5 @@
 class PagesController < ApplicationController
-  def welcome; end
+  def welcome
+    @transaction = Transaction.new
+  end
 end
