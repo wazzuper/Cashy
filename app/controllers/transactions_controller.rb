@@ -9,9 +9,11 @@ class TransactionsController < ApplicationController
     @transaction = current_user.transactions.new(transactions_params)
 
     if @transaction.save
+      flash[:notice] = t('transaction.added')
       redirect_to request.referrer
     else
-      render 'pages/welcome'
+      flash[:alert] = @transaction.errors.full_messages.join(', ')
+      redirect_to request.referrer
     end
   end
 
