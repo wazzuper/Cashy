@@ -40,3 +40,6 @@ en:
     title: 'Cashy'
     greeting: 'Welcome %{name}'
 
+  transaction_form:
+    add: 'Add money'
+
