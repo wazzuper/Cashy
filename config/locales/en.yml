@@ -39,6 +39,7 @@ en:
   navbar:
     title: 'Cashy'
     greeting: 'Welcome %{name}'
+    activity_page: 'Transactions history'
 
   main_page_guest:
     title: 'Welcome to Cashy app!'
@@ -46,10 +47,25 @@ en:
   main_page_user:
     form_add: 'Add money'
     form_title: 'Form for adding some money'
-    form_amount: 'Amount'
-    form_date: 'Date'
-    form_comment: 'Comment'
     transactions_title: 'Last 10 transactions'
 
   transaction:
     added: 'Transaction added.'
+    edit_title: 'Edit your transaction'
+    updated: 'Transaction updated.'
+    deleted: 'Transaction deleted.'
+    button:
+      update: 'Update'
+      back: 'Back'
+
+  activity_page:
+    history: 'Transactions history'
+    amount: 'Amount'
+    date: 'Date'
+    comment: 'Comment'
+    edit: 'Edit transaction'
+    delete: 'Delete transaction'
+    confirm: 'Are you sure?'
+    button:
+      edit: 'Edit'
+      delete: 'Delete'

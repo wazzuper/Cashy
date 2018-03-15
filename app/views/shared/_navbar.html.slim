@@ -4,6 +4,12 @@ nav.navbar.navbar-expand-lg.navbar-light
     button.navbar-toggler type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
       span.navbar-toggler-icon
 
+    div#navbarNav.collapse.navbar-collapse
+      ul.navbar-nav
+        - if user_signed_in?
+          li
+            = link_to t('navbar.activity_page'), activity_page_path, class: 'nav-link'
+
     div#navbarSupportedContent.collapse.navbar-collapse
       ul.nav.navbar-nav.ml-auto
         - if user_signed_in?

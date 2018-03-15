@@ -1,0 +1,19 @@
+h3 = t('activity_page.history')
+
+table.table.table-striped
+  thead
+    tr.bg-primary.text-white
+      td = t('activity_page.amount')
+      td = t('activity_page.date')
+      td = t('activity_page.comment')
+      td = t('activity_page.edit')
+      td = t('activity_page.delete')
+  tbody
+    - @transactions.each do |transaction|
+      tr
+        td = transaction.amount
+        td = transaction.date
+        td = transaction.comment
+        td = link_to t('activity_page.button.edit'), edit_transaction_path(transaction), class: 'btn btn-warning'
+        td = link_to t('activity_page.button.delete'), transaction_path(transaction),
+              method: :delete, data: { confirm: t('activity_page.confirm') }, class: 'btn btn-danger'

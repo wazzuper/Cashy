@@ -1,0 +1,8 @@
+.row.col-md-4.offset-md-4
+  h3.text-center = t('transaction.edit_title')
+  = simple_form_for @transaction do |f|
+    = f.input :amount
+    = f.input :date, as: :date, order: [:day, :month, :year]
+    = f.input :comment
+    = f.submit t('transaction.button.update'), class: 'btn btn-block btn-warning'
+    = link_to t('transaction.button.back'), activity_page_path, class: 'btn btn-block btn-primary'
