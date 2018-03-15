@@ -47,3 +47,6 @@ en:
     form_add: 'Add money'
     form_title: 'Form for adding some money'
     transactions_title: 'Last 10 transactions'
+
+  transaction:
+    added: 'Transaction added.'
