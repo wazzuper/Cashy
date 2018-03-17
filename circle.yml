@@ -13,6 +13,10 @@ dependencies:
   pre:
     - gem install bundler --pre
 
+database:
+  override:
+    - bundle exec rake test:prepare
+
 test:
   pre:
     - yarn install
