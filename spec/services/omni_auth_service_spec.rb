@@ -3,12 +3,8 @@ require 'rails_helper'
 RSpec.describe OmniAuthService do
   let(:github_hash) { { provider: 'github', uid: '12345', info: { email: 'user@email.com' } } }
   let(:google_hash) { { provider: 'google', uid: '12345', info: { email: 'user@email.com' } } }
-  let(:omni_auth_hash_github) do
-    OmniAuth::AuthHash.new(github_hash)
-  end
-  let(:omni_auth_hash_google) do
-    OmniAuth::AuthHash.new(google_hash)
-  end
+  let(:omni_auth_hash_github) { OmniAuth::AuthHash.new(github_hash) }
+  let(:omni_auth_hash_google) { OmniAuth::AuthHash.new(google_hash) }
   let(:user) { create(:user) }
 
   describe '#user' do

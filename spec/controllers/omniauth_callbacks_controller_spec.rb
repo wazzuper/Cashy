@@ -4,9 +4,7 @@ RSpec.describe OmniauthCallbacksController, type: :controller do
   describe '#github' do
     let(:added_user) { User.find_by(email: 'user@email.com') }
     let(:github_hash) { { provider: 'github', uid: '12345', info: { email: 'user@email.com' } } }
-    let(:omni_auth_hash_github) do
-      OmniAuth::AuthHash.new(github_hash)
-    end
+    let(:omni_auth_hash_github) { OmniAuth::AuthHash.new(github_hash) }
 
     context 'when github email does not exist' do
       before do
@@ -52,9 +50,7 @@ RSpec.describe OmniauthCallbacksController, type: :controller do
   describe '#google_oauth2' do
     let(:added_user) { User.find_by(email: 'user@email.com') }
     let(:google_hash) { { provider: 'google', uid: '12345', info: { email: 'user@email.com' } } }
-    let(:omni_auth_hash_google) do
-      OmniAuth::AuthHash.new(google_hash)
-    end
+    let(:omni_auth_hash_google) { OmniAuth::AuthHash.new(google_hash) }
 
     context 'when google email does not exist' do
       before do
