@@ -36,7 +36,7 @@ RSpec.describe OmniAuthService do
         user = OmniAuthService.new(user_with_identity).user
         expect(user.identities.last.provider).to eql('github')
         expect(user.identities.last.uid).to eql('555')
-        expect(user.email).to eql('user1@email.com')
+        expect(user).to be_a_kind_of(User)
       end
     end
   end
