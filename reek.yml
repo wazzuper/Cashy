@@ -12,4 +12,5 @@ UtilityFunction:
 
 FeatureEnvy:
   exclude:
-    - "OmniAuthService"
+    - 'OmniAuthService'
+    - 'Transaction'
