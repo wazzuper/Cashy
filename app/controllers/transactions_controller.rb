@@ -7,6 +7,7 @@ class TransactionsController < ApplicationController
 
   def create
     @transaction = current_user.transactions.new(transactions_params)
+    authorize @transaction
 
     if @transaction.save
       flash[:notice] = t('transaction.added')

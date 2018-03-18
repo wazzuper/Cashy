@@ -35,6 +35,7 @@ en:
     log_out: 'Log out'
     edit_profile: 'Edit profile'
     registration: 'Registration'
+    not_auth: 'You should sign in to continue'
 
   navbar:
     title: 'Cashy'
