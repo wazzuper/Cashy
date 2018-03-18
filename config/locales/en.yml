@@ -41,7 +41,8 @@ en:
     greeting: 'Welcome %{name}'
 
   main_page_guest:
-    title: 'Welcome to Cashy app!'
+    welcome: 'Welcome to Cashy app!'
+    message: 'To use our app you should sign up/sign in.'
 
   main_page_user:
     form_add: 'Add money'

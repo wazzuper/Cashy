@@ -1,11 +1,6 @@
 class TransactionsController < ApplicationController
   before_action :authenticate_user!
 
-  def index
-    @transaction = Transaction.new
-    @transactions = current_user.last_transactions
-  end
-
   def new
     @transaction = current_user.transactions.new
   end
