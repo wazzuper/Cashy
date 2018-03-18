@@ -9,4 +9,4 @@
       - @transactions.each do |transaction|
         tr
           td = transaction.amount
-          td = transaction.date
+          td = transaction.date.strftime("%d/%m/%Y")

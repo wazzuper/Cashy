@@ -1,5 +1,6 @@
 = simple_form_for @transaction do |f|
-  = f.input :amount
-  = f.input :date, as: :date, order: [:day, :month, :year]
+  = f.input :amount, input_html: { min: '1' }
+  = f.input :date, as: :date, order: [:day, :month, :year], html5: true,
+            input_html: { min: "#{Date.today.year - 100}", max: "#{Date.today}", value: "#{Date.today}" }
   = f.input :comment
   = f.submit t('main_page_user.form_add'), class: 'btn btn-success'
