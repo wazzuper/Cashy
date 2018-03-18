@@ -12,7 +12,7 @@ class Transaction < ApplicationRecord
 
   def return_amount_with_two_decimal(value)
     if value.to_s.include?('.')
-      num = value.to_s.split('.')
+      num = value.split('.')
       num[1] = num[1][0..1]
       num.join('.').to_f
     else
