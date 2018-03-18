@@ -11,10 +11,12 @@ class Transaction < ApplicationRecord
   private
 
   def return_amount_with_two_decimal(value)
-    if value.is_a?(String)
-      errors[:amount]
+    if value.to_s.include?('.')
+      num = value.to_s.split('.')
+      num[1] = num[1][0..1]
+      num.join('.').to_f
     else
-      value.floor(2)
+      value
     end
   end
 end
