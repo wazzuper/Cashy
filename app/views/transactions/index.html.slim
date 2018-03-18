@@ -1,0 +1,12 @@
+.row
+  .col-md-6
+    h4 = t('main_page_user.form_title')
+    = render 'shared/add_money_form'
+  .col-md-6
+    h4 = t('main_page_user.transactions_title')
+    table.table
+      tbody
+      - @transactions.each do |transaction|
+        tr
+          td = transaction.amount
+          td = transaction.date

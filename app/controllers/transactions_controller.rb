@@ -1,6 +1,11 @@
 class TransactionsController < ApplicationController
   before_action :authenticate_user!
 
+  def index
+    @transaction = Transaction.new
+    @transactions = current_user.transactions.limit(10).order(created_at: :desc)
+  end
+
   def new
     @transaction = current_user.transactions.new
   end
