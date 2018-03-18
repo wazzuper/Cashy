@@ -3,7 +3,7 @@ class TransactionsController < ApplicationController
 
   def index
     @transaction = Transaction.new
-    @transactions = current_user.transactions.limit(10).order(created_at: :desc)
+    @transactions = current_user.last_transactions
   end
 
   def new
