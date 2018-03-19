@@ -25,7 +25,7 @@ class Transaction < ApplicationRecord
   end
 
   def return_date_or_error(value)
-    if value.to_datetime > Date.today
+    if value.to_datetime > Time.zone.today
       errors[:date]
     else
       value
