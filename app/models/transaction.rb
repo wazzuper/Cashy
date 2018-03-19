@@ -3,6 +3,7 @@ class Transaction < ApplicationRecord
 
   validates :amount, :date, presence: true
   validates :amount, numericality: { greater_than: 0, less_than: 999999999 }
+  validate :date_in_the_past
 
   def amount=(value)
     write_attribute(:amount, return_amount_with_two_decimal(value)) if value
@@ -17,6 +18,12 @@ class Transaction < ApplicationRecord
       num.join('.').to_f
     else
       value
+    end
+  end
+
+  def date_in_the_past
+    if date.present? && date > Time.zone.today
+      errors.add(:date, :in_the_future) 
     end
   end
 end

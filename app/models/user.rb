@@ -8,4 +8,8 @@ class User < ApplicationRecord
   devise :omniauthable, omniauth_providers: %i[google_oauth2 github]
 
   mount_uploader :avatar, AvatarUploader
+
+  def last_transactions
+    transactions.limit(10).order(created_at: :desc)
+  end
 end

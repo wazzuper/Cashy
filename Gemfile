@@ -67,8 +67,10 @@ gem 'rubocop-rspec'
 gem 'reek'
 
 gem 'webpacker', '~> 3.2'
+gem 'simple_form'
 
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-github'
 gem 'omniauth-google-oauth2'
+gem 'pundit'

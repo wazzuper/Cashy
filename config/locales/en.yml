@@ -35,8 +35,35 @@ en:
     log_out: 'Log out'
     edit_profile: 'Edit profile'
     registration: 'Registration'
+    not_auth: 'You should sign in to continue'
 
   navbar:
     title: 'Cashy'
     greeting: 'Welcome %{name}'
 
+  main_page_guest:
+    welcome: 'Welcome to Cashy app!'
+    message: 'To use our app you should sign up/sign in.'
+
+  main_page_user:
+    form_add: 'Add money'
+    form_title: 'Form for adding some money'
+    form_amount: 'Amount'
+    form_date: 'Date'
+    form_comment: 'Comment'
+    transactions_title: 'Last 10 transactions'
+
+  transaction:
+    added: 'Transaction added.'
+
+  activerecord:
+    errors:
+      models:
+        transaction:
+          attributes:
+            date:
+              in_the_future: 'should be in the past'
+
+  feature_tests:
+    date:
+      in_the_future: 'should be in the past'
