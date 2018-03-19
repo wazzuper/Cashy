@@ -8,6 +8,10 @@ class Transaction < ApplicationRecord
     write_attribute(:amount, return_amount_with_two_decimal(value)) if value
   end
 
+  def date=(value)
+    write_attribute(:date, return_date_or_error(value)) if value
+  end
+
   private
 
   def return_amount_with_two_decimal(value)
@@ -15,6 +19,14 @@ class Transaction < ApplicationRecord
       num = value.to_s.split('.')
       num[1] = num[1][0..1]
       num.join('.').to_f
+    else
+      value
+    end
+  end
+
+  def return_date_or_error(value)
+    if value.to_datetime > Date.today
+      errors[:date]
     else
       value
     end
