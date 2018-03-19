@@ -19,12 +19,4 @@ RSpec.describe Transaction, type: :model do
       expect(transaction.amount).to eq(22.46)
     end
   end
-
-  describe '#date=' do
-    it 'returns date' do
-      transaction = create(:transaction, date: 'Mar 14 2018')
-
-      expect(transaction.date).to eq('14/03/2018')
-    end
-  end
 end

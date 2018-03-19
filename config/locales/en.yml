@@ -55,3 +55,15 @@ en:
 
   transaction:
     added: 'Transaction added.'
+
+  activerecord:
+    errors:
+      models:
+        transaction:
+          attributes:
+            date:
+              in_the_future: 'should be in the past'
+
+  feature_tests:
+    date:
+      in_the_future: 'should be in the past'

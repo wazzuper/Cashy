@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'Adding transaction' do
+feature 'Home page visitation' do
   let(:user) { create(:user) }
 
   before do
@@ -34,6 +34,6 @@ feature 'Adding transaction' do
     fill_in('Date', with: '15/3/2222')
     click_button(I18n.t 'main_page_user.form_add')
 
-    expect(page).to have_content('Date can\'t be blank')
+    expect(page).to have_content(I18n.t ('feature_tests.date.in_the_future'))
   end
 end
