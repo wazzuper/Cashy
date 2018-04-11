@@ -7,9 +7,10 @@
 # Ignore all .env files
 /.env*
 
-# Ignore all /public/packs and /public/packs-test files
+# Ignore all /public/packs, /public/packs-test and /public/uploads/ files
 /public/packs
 /public/packs-test
+/public/uploads/
 
 # Ignore bundler config.
 /.bundle
