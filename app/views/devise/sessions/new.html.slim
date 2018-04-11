@@ -16,4 +16,7 @@
             = f.check_box :remember_me
             = t('.remember_me', default: 'Remember me')
       = f.submit  t('.sign_in', default: 'Sign in'), class: 'btn btn-primary'
+      hr
+      = link_to t('devise.registrations.github_sign_in'), user_github_omniauth_authorize_path, class: 'btn btn-dark'
+      = link_to t('devise.registrations.google_sign_in'), user_google_oauth2_omniauth_authorize_path, class: 'btn btn-light'
 = render 'devise/shared/links'
